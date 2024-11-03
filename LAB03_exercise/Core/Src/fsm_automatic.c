@@ -61,7 +61,7 @@ void fsm_automatic_run(){
 		OffAll2();
 
 		STATUS_LED2 = AUTO_GREEN2;
-		TimeForLed1 = TimeRed;
+		TimeForLed2 = TimeGreen;
 		setTimer4(1000);
 		break;
 	case AUTO_RED2:

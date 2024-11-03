@@ -50,11 +50,12 @@ void fsm_manual_run(){
 		break;
 	case MODE1:
 		if(TimeRed != TimeYellow + TimeGreen){
-			OffAll1();
-			OffAll2();
-			updateBuffer(FAIL);
+			TimeRed = 5;
+			TimeYellow = 2;
+			TimeGreen = 3;
 		}
-		else fsm_automatic_run();
+
+		fsm_automatic_run();
 		updateBuffer(STATUS_MODE);
 		display_led7seg();
 
@@ -81,7 +82,7 @@ void fsm_manual_run(){
 		}
 		else if(isButton3Pressed()){
 			TimeRed = value;
-			STATUS_MODE = MODE1;
+			//STATUS_MODE = MODE1;
 		}
 		break;
 	case MODE3:
@@ -101,7 +102,7 @@ void fsm_manual_run(){
 		}
 		else if(isButton3Pressed()){
 			TimeYellow = value;
-			STATUS_MODE = MODE1;
+			//STATUS_MODE = MODE1;
 		}
 		break;
 	case MODE4:
@@ -110,6 +111,12 @@ void fsm_manual_run(){
 		display_led7seg();
 		if(isButton1Pressed()){
 			STATUS_MODE = MODE1;
+
+			STATUS_BLINKY = INIT;
+
+			STATUS_LED1 = INIT;
+			STATUS_LED2 = INIT;
+			STATUS_7SEG = INIT;
 		}
 		else if(isButton2Pressed()){
 			value++;
@@ -119,7 +126,7 @@ void fsm_manual_run(){
 		}
 		else if(isButton3Pressed()){
 			TimeGreen = value;
-			STATUS_MODE = MODE1;
+			//STATUS_MODE = MODE1;
 		}
 		break;
 	default:
