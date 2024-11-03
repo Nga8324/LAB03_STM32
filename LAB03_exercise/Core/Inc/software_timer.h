@@ -30,6 +30,5 @@ void setTimer7(int duration);
 void setTimer8(int duration);
 void setTimer9(int duration);
 void setTimer10(int duration);
-
 void timerRun();
 #endif /* INC_SOFTWARE_TIMER_H_ */

@@ -10,6 +10,9 @@
 
 #include "global.h"
 #include "main.h"
-
+#include "traffic_light.h"
+#include "led7_segment.h"
 void fsm_automatic_run();
+//void automatic_7seg_run();
+
 #endif /* INC_FSM_AUTOMATIC_H_ */

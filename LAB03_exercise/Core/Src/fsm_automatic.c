@@ -7,57 +7,101 @@
 #include "fsm_automatic.h"
 
 void fsm_automatic_run(){
-	switch(status){
-		case INIT:
-			//TO DO
-			HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_SET);
+	//
+	switch(STATUS_LED1){
+	case INIT:
+		OffAll1();
 
-			status = AUTO_RED;
-			setTimer1(5000);
-			isButton1Pressed(); // Xóa cờ của nút nhấn lun
-			break;
-		case AUTO_RED:
-			HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_SET);
+		STATUS_LED1 = AUTO_RED1;
+		TimeForLed1 = TimeRed;
+		setTimer3(1000);
+		break;
+	case AUTO_RED1:
+		OnLedRed1();
 
-			if(timer1_flag == 1){// Het thowi gian chay den xanh
-				status = AUTO_GREEN;
-				setTimer1(3000);
+		if(timer3_flag == 1){
+			setTimer3(1000);
+			TimeForLed1 --;
+			if(TimeForLed1 <= 0){
+				TimeForLed1 = TimeGreen;
+				STATUS_LED1 = AUTO_GREEN1;
 			}
-			// đến auto_red mới chờ nút nhấn man_red
-			if(isButton1Pressed() == 1){
-				status = MAN_RED;
+		}
+		break;
+	case AUTO_GREEN1:
+		OnLedGreen1();
 
-				setTimer1(10000);
+		if(timer3_flag == 1){
+			setTimer3(1000);
+			TimeForLed1 --;
+			if(TimeForLed1 <= 0){
+				TimeForLed1 = TimeYellow;
+				STATUS_LED1 = AUTO_YELLOW1;
 			}
-			break;
-		case AUTO_YELLOW:
-			// TODO
-			HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_SET);
+		}
+		break;
+	case AUTO_YELLOW1:
+		OnLedYellow1();
 
-			// Chuyen trang thai
-			if(timer1_flag == 1){// Het thowi gian chay den xanh
-				status = AUTO_RED;
-				isButton1Pressed();
-				setTimer1(5000);
+		if(timer3_flag == 1){
+			setTimer3(1000);
+			TimeForLed1 --;
+			if(TimeForLed1 <= 0){
+				TimeForLed1 = TimeRed;
+				STATUS_LED1 = AUTO_RED1;
 			}
-			break;
-		case AUTO_GREEN:
-			HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_RESET);
+		}
+		break;
+	default:
+		break;
+	}
+	//
+	switch(STATUS_LED2){
+	case INIT:
+		OffAll2();
 
-			if(timer1_flag == 1){// Het thowi gian chay den xanh
-				status = AUTO_YELLOW;
-				setTimer1(2000);
+		STATUS_LED2 = AUTO_GREEN2;
+		TimeForLed1 = TimeRed;
+		setTimer4(1000);
+		break;
+	case AUTO_RED2:
+		OnLedRed2();
+
+		if(timer4_flag == 1){
+			setTimer4(1000);
+			TimeForLed2 --;
+			if(TimeForLed2 <= 0){
+				TimeForLed2 = TimeGreen;
+				STATUS_LED2 = AUTO_GREEN2;
 			}
-			break;
-		default:
-			break;
+		}
+		break;
+	case AUTO_GREEN2:
+		OnLedGreen2();
+
+		if(timer4_flag == 1){
+			setTimer4(1000);
+			TimeForLed2 --;
+			if(TimeForLed2 <= 0){
+				TimeForLed2 = TimeYellow;
+				STATUS_LED2 = AUTO_YELLOW2;
+			}
+		}
+		break;
+	case AUTO_YELLOW2:
+		OnLedYellow2();
+
+		if(timer4_flag == 1){
+			setTimer4(1000);
+			TimeForLed2 --;
+			if(TimeForLed2 <= 0){
+				TimeForLed2 = TimeRed;
+				STATUS_LED2 = AUTO_RED2;
+			}
+		}
+		break;
+	default:
+		break;
 	}
 }
+
