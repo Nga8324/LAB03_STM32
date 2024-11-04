@@ -8,6 +8,11 @@
 #ifndef INC_TRAFFIC_LIGHT_H_
 #define INC_TRAFFIC_LIGHT_H_
 #include "main.h"
+#include "global.h"
+
+#define RED		40
+#define YELLOW	41
+#define GREEN 	42
 
 void OffAll1();
 void OffAll2();
@@ -25,5 +30,7 @@ void BlinkyLedYellow1();
 void BlinkyLedYellow2();
 void BlinkyLedGreen1();
 void BlinkyLedGreen2();
+
+void BlinkyLed(int led);
 
 #endif /* INC_TRAFFIC_LIGHT_H_ */

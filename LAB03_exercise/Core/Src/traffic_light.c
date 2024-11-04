@@ -65,3 +65,39 @@ void BlinkyLedYellow2(){
 void BlinkyLedGreen2(){
 	HAL_GPIO_TogglePin(GREEN2_GPIO_Port, GREEN2_Pin);
 }
+
+void BlinkyLed(int led){
+	switch(STATUS_BLINKY){
+	case INIT:
+		OffAll1();
+		OffAll2();
+		setTimer5(250);
+		if(led == RED) STATUS_BLINKY = RED;
+		if(led == YELLOW) STATUS_BLINKY = YELLOW;
+		if(led == GREEN) STATUS_BLINKY = GREEN;
+		break;
+	case RED:
+		if(timer5_flag == 1){
+			setTimer5(250);
+			BlinkyLedRed1();
+			BlinkyLedRed2();
+		}
+		break;
+	case YELLOW:
+		if(timer5_flag == 1){
+			setTimer5(250);
+			BlinkyLedYellow1();
+			BlinkyLedYellow2();
+		}
+		break;
+	case GREEN:
+		if(timer5_flag == 1){
+			setTimer5(250);
+			BlinkyLedGreen1();
+			BlinkyLedGreen2();
+		}
+		break;
+	default:
+		break;
+	}
+}
