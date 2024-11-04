@@ -112,8 +112,6 @@ void fsm_manual_run(){
 		if(isButton1Pressed()){
 			STATUS_MODE = MODE1;
 
-			STATUS_BLINKY = INIT;
-
 			STATUS_LED1 = INIT;
 			STATUS_LED2 = INIT;
 			STATUS_7SEG = INIT;
