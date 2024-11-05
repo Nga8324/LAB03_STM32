@@ -9,7 +9,6 @@
 void fsm_setting_run(){
 	switch(STATUS_MODE){
 	case INIT:
-
 		STATUS_MODE= MODE1;
 		break;
 	case MODE1:
