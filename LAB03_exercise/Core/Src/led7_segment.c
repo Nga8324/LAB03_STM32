@@ -166,11 +166,6 @@ void updateBuffer(int mode){
 		buffer_7seg[2] = 0;
 		buffer_7seg[3] = 4;
 		break;
-	case FAIL:
-		buffer_7seg[0] = -1;
-		buffer_7seg[1] = -1;
-		buffer_7seg[2] = -1;
-		buffer_7seg[3] = -1;
 	default:
 		break;
 	}

@@ -10,6 +10,7 @@ int status = INIT;
 int STATUS_LED1 = INIT;
 int STATUS_LED2 = INIT;
 int STATUS_7SEG = INIT;
+
 int STATUS_MODE = INIT;
 int STATUS_BLINKY = INIT;
 

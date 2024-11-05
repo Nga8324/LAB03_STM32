@@ -71,6 +71,7 @@ void BlinkyLed(int led){
 	case INIT:
 		OffAll1();
 		OffAll2();
+
 		setTimer5(250);
 		if(led == RED) STATUS_BLINKY = RED;
 		if(led == YELLOW) STATUS_BLINKY = YELLOW;

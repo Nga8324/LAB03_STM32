@@ -26,6 +26,7 @@
 #include "button.h"
 #include "fsm_automatic.h"
 #include "fsm_manual.h"
+#include "fsm_setting.h"
 #include "led7_segment.h"
 #include "global.h"
 /* USER CODE END Includes */
@@ -110,8 +111,10 @@ int main(void)
 		  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
 		  setTimer1(500);
 	  }
-	  //fsm_automatic_run();
-	fsm_manual_run();
+
+	  fsm_setting_run();
+	  fsm_automatic_run();
+	  fsm_manual_run();
   }
   /* USER CODE END 3 */
 }

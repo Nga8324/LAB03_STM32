@@ -7,7 +7,14 @@
 #include "fsm_automatic.h"
 
 void fsm_automatic_run(){
+	if (STATUS_MODE != MODE1) return;
 	//
+	if (TimeRed != TimeYellow + TimeGreen) {
+        TimeRed = 5;
+        TimeYellow = 2;
+        TimeGreen = 3;
+    }
+
 	switch(STATUS_LED1){
 	case INIT:
 		OffAll1();
@@ -18,6 +25,9 @@ void fsm_automatic_run(){
 		break;
 	case AUTO_RED1:
 		OnLedRed1();
+
+	    updateBuffer(MODE1);
+	    display_led7seg();
 
 		if(timer3_flag == 1){
 			setTimer3(1000);
@@ -31,6 +41,10 @@ void fsm_automatic_run(){
 	case AUTO_GREEN1:
 		OnLedGreen1();
 
+	    updateBuffer(MODE1);
+	    display_led7seg();
+
+
 		if(timer3_flag == 1){
 			setTimer3(1000);
 			TimeForLed1 --;
@@ -42,6 +56,10 @@ void fsm_automatic_run(){
 		break;
 	case AUTO_YELLOW1:
 		OnLedYellow1();
+
+	    updateBuffer(MODE1);
+	    display_led7seg();
+
 
 		if(timer3_flag == 1){
 			setTimer3(1000);
@@ -60,12 +78,19 @@ void fsm_automatic_run(){
 	case INIT:
 		OffAll2();
 
+	    updateBuffer(MODE1);
+	    display_led7seg();
+
+
 		STATUS_LED2 = AUTO_GREEN2;
 		TimeForLed2 = TimeGreen;
 		setTimer4(1000);
 		break;
 	case AUTO_RED2:
 		OnLedRed2();
+
+	    updateBuffer(MODE1);
+	    display_led7seg();
 
 		if(timer4_flag == 1){
 			setTimer4(1000);
@@ -79,6 +104,10 @@ void fsm_automatic_run(){
 	case AUTO_GREEN2:
 		OnLedGreen2();
 
+	    updateBuffer(MODE1);
+	    display_led7seg();
+
+
 		if(timer4_flag == 1){
 			setTimer4(1000);
 			TimeForLed2 --;
@@ -90,6 +119,9 @@ void fsm_automatic_run(){
 		break;
 	case AUTO_YELLOW2:
 		OnLedYellow2();
+
+	    updateBuffer(MODE1);
+	    display_led7seg();
 
 		if(timer4_flag == 1){
 			setTimer4(1000);

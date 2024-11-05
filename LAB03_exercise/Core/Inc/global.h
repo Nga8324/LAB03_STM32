@@ -25,7 +25,6 @@
 #define MODE2			23
 #define MODE3			24
 #define MODE4 			25
-#define FAIL 			26
 
 #define MAX_7SEG		4
 
@@ -36,6 +35,7 @@ extern int buffer_7seg[MAX_7SEG];
 extern int STATUS_7SEG;
 extern int STATUS_LED1;
 extern int STATUS_LED2;
+
 extern int TimeRed;
 extern int TimeGreen;
 extern int TimeYellow;

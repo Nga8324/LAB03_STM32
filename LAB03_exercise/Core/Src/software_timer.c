@@ -55,26 +55,6 @@ void setTimer7(int duration){
 	timer7_flag = 0;
 }
 
-int timer8_counter = 0;
-int timer8_flag = 0;
-void setTimer8(int duration){
-	timer8_counter = duration / TICK;
-	timer8_flag = 0;
-}
-
-int timer9_counter = 0;
-int timer9_flag = 0;
-void setTimer9(int duration){
-	timer9_counter = duration / TICK;
-	timer9_flag = 0;
-}
-
-int timer10_counter = 0;
-int timer10_flag = 0;
-void setTimer10(int duration){
-	timer10_counter = duration / TICK;
-	timer10_flag = 0;
-}
 void timerRun(){
 	if(timer1_counter > 0){
 		timer1_counter --;
@@ -116,24 +96,6 @@ void timerRun(){
 		timer7_counter --;
 		if(timer7_counter <= 0){
 			timer7_flag = 1;
-		}
-	}
-	if(timer8_counter > 0){
-		timer8_counter --;
-		if(timer8_counter <= 0){
-			timer8_flag = 1;
-		}
-	}
-	if(timer9_counter > 0){
-		timer9_counter --;
-		if(timer9_counter <= 0){
-			timer9_flag = 1;
-		}
-	}
-	if(timer10_counter > 0){
-		timer10_counter --;
-		if(timer10_counter <= 0){
-			timer10_flag = 1;
 		}
 	}
 }
