@@ -175,33 +175,33 @@ void display_led7seg(){
 	switch(STATUS_7SEG){
 	case INIT:
 		STATUS_7SEG = LED7SEG1;
-		setTimer6(250);
+		setTimer(5, 250);
 		break;
 	case LED7SEG1:
 		update7SEG(0);
-		if(timer6_flag == 1){
-			setTimer6(250);
+		if(timer_flag[5] == 1){
+			setTimer(5, 250);
 			STATUS_7SEG = LED7SEG2;
 		}
 		break;
 	case LED7SEG2:
 		update7SEG(1);
-		if(timer6_flag == 1){
-			setTimer6(250);
+		if(timer_flag[5] == 1){
+			setTimer(5, 250);
 			STATUS_7SEG = LED7SEG3;
 		}
 		break;
 	case LED7SEG3:
 		update7SEG(2);
-		if(timer6_flag == 1){
-			setTimer6(250);
+		if(timer_flag[5] == 1){
+			setTimer(5, 250);
 			STATUS_7SEG = LED7SEG4;
 		}
 		break;
 	case LED7SEG4:
 		update7SEG(3);
-		if(timer6_flag == 1){
-			setTimer6(250);
+		if(timer_flag[5] == 1){
+			setTimer(5, 250);
 			STATUS_7SEG = LED7SEG1;
 		}
 		break;

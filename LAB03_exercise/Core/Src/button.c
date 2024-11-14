@@ -13,27 +13,11 @@ int KeyReg2[NUM_button] = {NORMAL_STATE};
 int KeyReg3[NUM_button] = {NORMAL_STATE};
 int TimerForKeyPress = 200;
 
-int button1_flag = 0;
-int button2_flag = 0;
-int button3_flag = 0;
+int button_flag[NUM_button] = {0};
 
-int isButton1Pressed(){
-	if(button1_flag == 1){
-		button1_flag = 0;
-		return 1;
-	}
-	return 0;
-}
-int isButton2Pressed(){
-	if(button2_flag == 1){
-		button2_flag = 0;
-		return 1;
-	}
-	return 0;
-}
-int isButton3Pressed(){
-	if(button3_flag == 1){
-		button3_flag = 0;
+int isButtonPressed(int but){
+	if(button_flag[but] == 1){
+		button_flag[but] = 0;
 		return 1;
 	}
 	return 0;
@@ -50,7 +34,7 @@ void getKeyInput(){
 					KeyReg3[but] = KeyReg2[but];
 					if(KeyReg2[but] == PRESSED_STATE){
 						//TODO
-						button1_flag = 1;
+						button_flag[but] = 1;
 						TimerForKeyPress = 200;
 					}
 				}else{
@@ -70,7 +54,7 @@ void getKeyInput(){
 					KeyReg3[but] = KeyReg2[but];
 					if(KeyReg2[but] == PRESSED_STATE){
 						//TODO
-						button2_flag = 1;
+						button_flag[but] = 1;
 						TimerForKeyPress = 200;
 					}
 				}else{
@@ -90,7 +74,7 @@ void getKeyInput(){
 					KeyReg3[but] = KeyReg2[but];
 					if(KeyReg2[but] == PRESSED_STATE){
 						//TODO
-						button3_flag = 1;
+						button_flag[but] = 1;
 						TimerForKeyPress = 200;
 					}
 				}else{

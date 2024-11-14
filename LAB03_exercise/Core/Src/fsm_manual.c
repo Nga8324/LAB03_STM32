@@ -13,7 +13,7 @@ void fsm_manual_run(){
 		updateBuffer(STATUS_MODE);
 		display_led7seg();
 
-		if(isButton2Pressed()){
+		if(isButtonPressed(1)){
 			value = (value < 99) ? value + 1 : 1;
 		}
 
@@ -23,7 +23,7 @@ void fsm_manual_run(){
 		updateBuffer(STATUS_MODE);
 		display_led7seg();
 
-		if(isButton2Pressed()){
+		if(isButtonPressed(1)){
 			value = (value < 99) ? value + 1 : 1;
 		}
 
@@ -33,7 +33,7 @@ void fsm_manual_run(){
 		updateBuffer(STATUS_MODE);
 		display_led7seg();
 
-		if(isButton2Pressed()){
+		if(isButtonPressed(1)){
 			value = (value < 99) ? value + 1 : 1;
 		}
 		break;

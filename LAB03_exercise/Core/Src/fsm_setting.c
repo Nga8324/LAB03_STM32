@@ -12,35 +12,34 @@ void fsm_setting_run(){
 		STATUS_MODE= MODE1;
 		break;
 	case MODE1:
-
-		if(isButton1Pressed()){
+		if(isButtonPressed(0)){
 			STATUS_MODE = MODE2;
 			value = TimeRed;
 			STATUS_BLINKY = INIT;
 		}
 		break;
 	case MODE2:
-		if(isButton1Pressed()){
+		if(isButtonPressed(0)){
 			STATUS_MODE = MODE3;
 			value = TimeYellow;
 			STATUS_BLINKY = INIT;
 		}
-		else if(isButton3Pressed()){
+		else if(isButtonPressed(2)){
 			TimeRed = value;
 		}
 		break;
 	case MODE3:
-		if(isButton1Pressed()){
+		if(isButtonPressed(0)){
 			STATUS_MODE = MODE4;
 			value = TimeGreen;
 			STATUS_BLINKY = INIT;
 		}
-		else if(isButton3Pressed()){
+		else if(isButtonPressed(2)){
 			TimeYellow = value;
 		}
 		break;
 	case MODE4:
-		if(isButton1Pressed()){
+		if(isButtonPressed(0)){
 			STATUS_MODE = MODE1;
 
 			STATUS_LED1 = INIT;
@@ -49,12 +48,11 @@ void fsm_setting_run(){
 
 			STATUS_BLINKY = INIT;
 		}
-		else if(isButton3Pressed()){
+		else if(isButtonPressed(2)){
 			TimeGreen = value;
 		}
 		break;
 	default:
-		//STATUS_MODE = INIT;
 		break;
 	}
 

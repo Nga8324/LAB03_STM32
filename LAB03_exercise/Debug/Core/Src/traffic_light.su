@@ -6,10 +6,10 @@ traffic_light.c:29:6:OnLedYellow1	8	static
 traffic_light.c:34:6:OnLedYellow2	8	static
 traffic_light.c:39:6:OnLedGreen1	8	static
 traffic_light.c:44:6:OnLedGreen2	8	static
-traffic_light.c:50:6:BlinkyLedRed1	8	static
-traffic_light.c:53:6:BlinkyLedRed2	8	static
-traffic_light.c:56:6:BlinkyLedYellow1	8	static
-traffic_light.c:59:6:BlinkyLedGreen1	8	static
-traffic_light.c:62:6:BlinkyLedYellow2	8	static
-traffic_light.c:65:6:BlinkyLedGreen2	8	static
+traffic_light.c:51:6:BlinkyLedRed1	8	static
+traffic_light.c:54:6:BlinkyLedRed2	8	static
+traffic_light.c:57:6:BlinkyLedYellow1	8	static
+traffic_light.c:60:6:BlinkyLedGreen1	8	static
+traffic_light.c:63:6:BlinkyLedYellow2	8	static
+traffic_light.c:66:6:BlinkyLedGreen2	8	static
 traffic_light.c:69:6:BlinkyLed	16	static

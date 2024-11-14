@@ -14,9 +14,7 @@
 #define PRESSED_STATE 	GPIO_PIN_RESET
 #define NUM_button	3
 
-int isButton1Pressed();
-int isButton2Pressed();
-int isButton3Pressed();
+int isButtonPressed(int but);
 
 //int isButton1LongPressed();
 //int isButton2LongPressed();

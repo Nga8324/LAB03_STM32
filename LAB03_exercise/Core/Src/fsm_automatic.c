@@ -21,7 +21,7 @@ void fsm_automatic_run(){
 
 		STATUS_LED1 = AUTO_RED1;
 		TimeForLed1 = TimeRed;
-		setTimer3(1000);
+		setTimer(2, 1000);
 		break;
 	case AUTO_RED1:
 		OnLedRed1();
@@ -29,8 +29,8 @@ void fsm_automatic_run(){
 	    updateBuffer(MODE1);
 	    display_led7seg();
 
-		if(timer3_flag == 1){
-			setTimer3(1000);
+		if(timer_flag[2] == 1){
+			setTimer(2, 1000);
 			TimeForLed1 --;
 			if(TimeForLed1 <= 0){
 				TimeForLed1 = TimeGreen;
@@ -44,9 +44,8 @@ void fsm_automatic_run(){
 	    updateBuffer(MODE1);
 	    display_led7seg();
 
-
-		if(timer3_flag == 1){
-			setTimer3(1000);
+		if(timer_flag[2] == 1){
+			setTimer(2, 1000);
 			TimeForLed1 --;
 			if(TimeForLed1 <= 0){
 				TimeForLed1 = TimeYellow;
@@ -60,9 +59,8 @@ void fsm_automatic_run(){
 	    updateBuffer(MODE1);
 	    display_led7seg();
 
-
-		if(timer3_flag == 1){
-			setTimer3(1000);
+		if(timer_flag[2] == 1){
+			setTimer(2, 1000);
 			TimeForLed1 --;
 			if(TimeForLed1 <= 0){
 				TimeForLed1 = TimeRed;
@@ -81,10 +79,9 @@ void fsm_automatic_run(){
 	    updateBuffer(MODE1);
 	    display_led7seg();
 
-
 		STATUS_LED2 = AUTO_GREEN2;
 		TimeForLed2 = TimeGreen;
-		setTimer4(1000);
+		setTimer(3, 1000);
 		break;
 	case AUTO_RED2:
 		OnLedRed2();
@@ -92,8 +89,8 @@ void fsm_automatic_run(){
 	    updateBuffer(MODE1);
 	    display_led7seg();
 
-		if(timer4_flag == 1){
-			setTimer4(1000);
+		if(timer_flag[3] == 1){
+			setTimer(3, 1000);
 			TimeForLed2 --;
 			if(TimeForLed2 <= 0){
 				TimeForLed2 = TimeGreen;
@@ -107,9 +104,8 @@ void fsm_automatic_run(){
 	    updateBuffer(MODE1);
 	    display_led7seg();
 
-
-		if(timer4_flag == 1){
-			setTimer4(1000);
+		if(timer_flag[3] == 1){
+			setTimer(3, 1000);
 			TimeForLed2 --;
 			if(TimeForLed2 <= 0){
 				TimeForLed2 = TimeYellow;
@@ -123,8 +119,8 @@ void fsm_automatic_run(){
 	    updateBuffer(MODE1);
 	    display_led7seg();
 
-		if(timer4_flag == 1){
-			setTimer4(1000);
+		if(timer_flag[3] == 1){
+			setTimer(3, 1000);
 			TimeForLed2 --;
 			if(TimeForLed2 <= 0){
 				TimeForLed2 = TimeRed;

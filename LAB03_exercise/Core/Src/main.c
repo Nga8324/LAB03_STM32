@@ -101,19 +101,33 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   //STATUS_7SEG = INIT;
-  setTimer1(500);
+  //STATUS_MODE = MODE1;
+  STATUS_MODE = MODE2;
+  setTimer(0, 500);
+
   while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  if(timer1_flag == 1){
+	  // DEBUG
+	  if(timer_flag[0] == 1){
 		  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
-		  setTimer1(500);
+		  setTimer(0, 500);
 	  }
+	  // TEST BUTTON
+//	  if(isButtonPressed(1) == 1) {
+//		  HAL_GPIO_TogglePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin);
+//	  }
+//	  if(isButtonPressed(2) == 1) {
+//		  HAL_GPIO_TogglePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin);
+//	  }
+//	  if(isButtonPressed(3) == 1) {
+//		  HAL_GPIO_TogglePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin);
+//	  }
 
-	  fsm_setting_run();
-	  fsm_automatic_run();
+	  //fsm_setting_run();
+	  //fsm_automatic_run();
 	  fsm_manual_run();
   }
   /* USER CODE END 3 */
