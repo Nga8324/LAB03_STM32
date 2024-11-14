@@ -30,6 +30,7 @@ void getKeyInput(){
 		if(but == 0){
 			KeyReg2[but] = HAL_GPIO_ReadPin(Button1_GPIO_Port, Button1_Pin);
 			if((KeyReg0[but] == KeyReg1[but]) && (KeyReg1[but] == KeyReg2[but])){
+				// Nhấn nhanh
 				if(KeyReg3[but] != KeyReg2[but]){
 					KeyReg3[but] = KeyReg2[but];
 					if(KeyReg2[but] == PRESSED_STATE){
@@ -37,13 +38,15 @@ void getKeyInput(){
 						button_flag[but] = 1;
 						TimerForKeyPress = 200;
 					}
-				}else{
-					TimerForKeyPress --;
-					if(TimerForKeyPress == 0){
-						if(KeyReg2[but] == PRESSED_STATE){
-							KeyReg3[but] = NORMAL_STATE;
+				}
+				// Nhấn đè
+				else{
+					if(KeyReg2[but] == PRESSED_STATE){
+						TimerForKeyPress --;
+						if(TimerForKeyPress == 0){
+							button_flag[but] = 1;
+							TimerForKeyPress = 200;
 						}
-						TimerForKeyPress = 200;
 					}
 				}
 			}
@@ -58,12 +61,12 @@ void getKeyInput(){
 						TimerForKeyPress = 200;
 					}
 				}else{
-					TimerForKeyPress --;
-					if(TimerForKeyPress == 0){
-						if(KeyReg2[but] == PRESSED_STATE){
-							KeyReg3[but] = NORMAL_STATE;
+					if(KeyReg2[but] == PRESSED_STATE){
+						TimerForKeyPress --;
+						if(TimerForKeyPress == 0){
+							button_flag[but] = 1;
+							TimerForKeyPress = 200;
 						}
-						TimerForKeyPress = 200;
 					}
 				}
 			}
@@ -78,12 +81,12 @@ void getKeyInput(){
 						TimerForKeyPress = 200;
 					}
 				}else{
-					TimerForKeyPress --;
-					if(TimerForKeyPress == 0){
-						if(KeyReg2[but] == PRESSED_STATE){
-							KeyReg3[but] = NORMAL_STATE;
+					if(KeyReg2[but] == PRESSED_STATE){
+						TimerForKeyPress --;
+						if(TimerForKeyPress == 0){
+							button_flag[but] = 1;
+							TimerForKeyPress = 200;
 						}
-						TimerForKeyPress = 200;
 					}
 				}
 			}

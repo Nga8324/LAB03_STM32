@@ -16,10 +16,6 @@
 
 int isButtonPressed(int but);
 
-//int isButton1LongPressed();
-//int isButton2LongPressed();
-//int isButton3LongPressed();
-
 void getKeyInput();
 
 #endif /* INC_BUTTON_H_ */
