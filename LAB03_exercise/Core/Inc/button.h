@@ -12,7 +12,8 @@
 
 #define NORMAL_STATE 	GPIO_PIN_SET
 #define PRESSED_STATE 	GPIO_PIN_RESET
-#define NUM_button	3
+#define NUM_button				3
+#define TIME_INTO_LONG_PRESSED	200
 
 int isButtonPressed(int but);
 
