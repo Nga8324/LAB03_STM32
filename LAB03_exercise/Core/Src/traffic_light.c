@@ -48,22 +48,16 @@ void OnLedGreen2(){
 }
 
 
-void BlinkyLedRed1(){
+void BlinkyLedRed(){
 	HAL_GPIO_TogglePin(RED1_GPIO_Port, RED1_Pin);
-}
-void BlinkyLedRed2(){
 	HAL_GPIO_TogglePin(RED2_GPIO_Port, RED2_Pin);
 }
-void BlinkyLedYellow1(){
+void BlinkyLedYellow(){
 	HAL_GPIO_TogglePin(YELLOW1_GPIO_Port, YELLOW1_Pin);
-}
-void BlinkyLedGreen1(){
-	HAL_GPIO_TogglePin(GREEN1_GPIO_Port, GREEN1_Pin);
-}
-void BlinkyLedYellow2(){
 	HAL_GPIO_TogglePin(YELLOW2_GPIO_Port, YELLOW2_Pin);
 }
-void BlinkyLedGreen2(){
+void BlinkyLedGreen(){
+	HAL_GPIO_TogglePin(GREEN1_GPIO_Port, GREEN1_Pin);
 	HAL_GPIO_TogglePin(GREEN2_GPIO_Port, GREEN2_Pin);
 }
 void BlinkyLed(int led){
@@ -80,22 +74,19 @@ void BlinkyLed(int led){
 	case RED:
 		if(timer_flag[4] == 1){
 			setTimer(4, 250);
-			BlinkyLedRed1();
-			BlinkyLedRed2();
+			BlinkyLedRed();
 		}
 		break;
 	case YELLOW:
 		if(timer_flag[4] == 1){
 			setTimer(4, 250);
-			BlinkyLedYellow1();
-			BlinkyLedYellow2();
+			BlinkyLedYellow();
 		}
 		break;
 	case GREEN:
 		if(timer_flag[4] == 1){
 			setTimer(4, 250);
-			BlinkyLedGreen1();
-			BlinkyLedGreen2();
+			BlinkyLedGreen();
 		}
 		break;
 	default:
