@@ -116,19 +116,19 @@ int main(void)
 		  setTimer(0, 500);
 	  }
 	  // TEST BUTTON
-	  if(isButtonPressed(0) == 1) {
-		  HAL_GPIO_TogglePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin);
-	  }
-	  if(isButtonPressed(1) == 1) {
-		  HAL_GPIO_TogglePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin);
-	  }
-	  if(isButtonPressed(2) == 1) {
-		  HAL_GPIO_TogglePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin);
-	  }
+//	  if(isButtonPressed(0) == 1) {
+//		  HAL_GPIO_TogglePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin);
+//	  }
+//	  if(isButtonPressed(1) == 1) {
+//		  HAL_GPIO_TogglePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin);
+//	  }
+//	  if(isButtonPressed(2) == 1) {
+//		  HAL_GPIO_TogglePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin);
+//	  }
 
-//	  fsm_setting_run();
-//	  fsm_automatic_run();
-//	  fsm_manual_run();
+	  fsm_setting_run();
+	  fsm_automatic_run();
+	  fsm_manual_run();
   }
   /* USER CODE END 3 */
 }
