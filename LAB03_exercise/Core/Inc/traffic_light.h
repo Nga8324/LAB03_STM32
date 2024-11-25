@@ -24,12 +24,9 @@ void OnLedYellow2();
 void OnLedGreen1();
 void OnLedGreen2();
 
-void BlinkyLedRed1();
-void BlinkyLedRed2();
-void BlinkyLedYellow1();
-void BlinkyLedYellow2();
-void BlinkyLedGreen1();
-void BlinkyLedGreen2();
+void BlinkyLedRed();
+void BlinkyLedYellow();
+void BlinkyLedGreen();
 
 void BlinkyLed(int led);
 
